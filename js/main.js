@@ -37,11 +37,11 @@ var getArrayComments = function () {
 var getPhotoObjects = function () {
   var photoSetup = [];
 
-  for (var i = 0; i < photoCount; i++) {
+  for (var i = 0; i < PHOTO_COUNT; i++) {
     var tempObject = {};
     tempObject.url = 'photos/' + (i + 1) + '.jpg';
-    tempObject.likes = getRandomNumber(minLikes, maxLikes);
-    tempObject.comments = getRandomComments();
+    tempObject.likes = getRandomNumber(MIN_LIKES, MAX_LIKES);
+    tempObject.comments = getArrayComments();
     photoSetup.push(tempObject);
   }
 
@@ -60,9 +60,9 @@ var getPhotoTemplate = function (photo) {
 
 var renderPhotos = function () {
   var fragment = document.createDocumentFragment();
-  var object = getPhotoObjects(minLikes, maxLikes, commentsArray, photoCount);
+  var object = getPhotoObjects(MIN_LIKES, MAX_LIKES, COMMENTS_ARRAY, PHOTO_COUNT);
 
-  for (var i = 0; i < photoCount; i++) {
+  for (var i = 0; i < PHOTO_COUNT; i++) {
     var template = getPhotoTemplate(object[i]);
     fragment.appendChild(template);
   }

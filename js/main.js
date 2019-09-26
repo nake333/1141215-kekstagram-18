@@ -95,7 +95,7 @@ var renderPictureBig = function (element, data) {
   element.querySelector('.big-picture__img img').src = data.url;
   element.querySelector('.likes-count').textContent = data.likes;
   element.querySelector('.comments-count').textContent = data.comments.length;
-  element.querySelector('.social__caption').textContent = data.description;
+  element.querySelector('.social__caption').textContent = data.DESCRIPTION;
 };
 
 var getCommentElement = function () {

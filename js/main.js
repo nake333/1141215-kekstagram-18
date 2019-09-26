@@ -63,7 +63,7 @@ var getPhotoObjects = function () {
     tempObject.url = 'photos/' + (i + 1) + '.jpg';
     tempObject.likes = getRandomNumber(MIN_LIKES, MAX_LIKES);
     tempObject.comments = getArrayComments();
-    tempObject.description = DESCRIPTION[getRandomNumber(0, DESCRIPTION.length - 1)]
+    tempObject.description = DESCRIPTION[getRandomNumber(0, DESCRIPTION.length - 1)];
     photoSetup.push(tempObject);
   }
 

@@ -92,13 +92,6 @@ var renderPhotos = function () {
   pictureElement.appendChild(fragment);
 };
 
-var renderPictureBig = function (element, data) {
-  element.querySelector('.big-picture__img img').src = data.url;
-  element.querySelector('.likes-count').textContent = data.likes;
-  element.querySelector('.comments-count').textContent = data.comments.length;
-  element.querySelector('.social__caption').textContent = data.description;
-};
-
 var getCommentElement = function () {
   var containerElement = document.createElement('li');
   containerElement.classList.add('social__comment');
@@ -118,7 +111,12 @@ var getCommentElement = function () {
   return containerElement;
 };
 
-var renderComments = function (data) {
+var renderPictureBig = function (element, data) {
+  element.querySelector('.big-picture__img img').src = data.url;
+  element.querySelector('.likes-count').textContent = data.likes;
+  element.querySelector('.comments-count').textContent = data.comments.length;
+  element.querySelector('.social__caption').textContent = data.description;
+
   var fragment = document.createDocumentFragment();
 
   for (var i = 0; i < data.comments.length; i++) {
@@ -128,6 +126,7 @@ var renderComments = function (data) {
     fragment.appendChild(commentElement);
   }
 
+  socialComment.textContent = '';  
   socialComment.appendChild(fragment);
 };
 
@@ -135,5 +134,4 @@ renderPhotos(PHOTO_COUNT);
 showElement(pictureBig);
 hideElement(socialCommentCount);
 hideElement(commentsLoader);
-renderPictureBig(pictureBig, photos[0]);
-renderComments(AVATAR_COUNT, photos[0]);
+renderPictureBig(pictureBig, photos[0], AVATAR_COUNT);

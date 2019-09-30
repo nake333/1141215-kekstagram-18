@@ -126,7 +126,7 @@ var renderPictureBig = function (element, data) {
     fragment.appendChild(commentElement);
   }
 
-  socialComment.textContent = '';  
+  socialComment.textContent = '';
   socialComment.appendChild(fragment);
 };
 

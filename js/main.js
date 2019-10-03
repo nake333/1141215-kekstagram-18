@@ -131,7 +131,52 @@ var renderPictureBig = function (element, data) {
 };
 
 renderPhotos(PHOTO_COUNT);
-showElement(pictureBig);
-hideElement(socialCommentCount);
-hideElement(commentsLoader);
-renderPictureBig(pictureBig, photos[0], AVATAR_COUNT);
+// showElement(pictureBig);
+// hideElement(socialCommentCount);
+// hideElement(commentsLoader);
+// renderPictureBig(pictureBig, photos[0], AVATAR_COUNT);
+
+var HASHTAGS_MAX = 20;
+
+var uploadFiles = document.querySelector('#upload-file');
+var photoForm = document.querySelector('.img-upload__overlay');
+var hashtags = document.querySelector('.text__hashtags');
+var img = document.querySelector('.img-upload__preview img');
+var effectsBar = document.querySelector('.img-upload__effect-level');
+var effectsList = document.querySelector('.effects__list');
+
+var removeEffects = function () {
+  img.removeAttribute('class');
+};
+
+var renderEffects = function (evt) {
+  if (!(evt.target.value === 'none')) {
+    showElement(effectsBar);
+  } else {
+    hideElement(effectsBar);
+  }
+};
+
+var hashtagsValidation = function () {
+  var tempArray = hashtags.value.split(' ');
+
+  for (var i = 0; i < tempArray.length; i++) {
+    if (tempArray[i].length >= HASHTAGS_MAX) {
+      hashtags.setCustomValidity('Ваш хеш-тег' + tempArray[i] + ' длинее 20 символов, требуется сокращение');
+    } else {
+      hashtags.setCustomValidity('');
+    }
+  }
+};
+
+effectsList.addEventListener('change', function (evt) {
+  removeEffects();
+  renderEffects(evt);
+});
+
+uploadFiles.addEventListener('change', function () {
+  showElement(photoForm);
+  hideElement(effectsBar);
+});
+
+hashtags.addEventListener('change', hashtagsValidation);

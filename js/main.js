@@ -12,7 +12,7 @@ var PHOTO_COUNT = 25;
 var pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
 var pictureElement = document.querySelector('.pictures');
 // var pictureBig = document.querySelector('.big-picture');
-var photos = [];
+// var photos = [];
 
 // var socialCommentCount = document.querySelector('.social__comment-count');
 // var commentsLoader = document.querySelector('.comments-loader');

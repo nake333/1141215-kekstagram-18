@@ -34,7 +34,8 @@
 
             <!-- Изначальное состояние поля для загрузки изображения -->
             <fieldset class="img-upload__start">
-              <input type="file" id="upload-file" class="img-upload__input  visually-hidden" name="filename" //required>
+              <input type="file" id="upload-file" class="img-upload__input  visually-hidden" name="filename">
+              <!-- не забыть вернуть required -->
               <label for="upload-file" class="img-upload__label  img-upload__control">Загрузить</label>
             </fieldset>
 
@@ -235,6 +236,6 @@
   <template id="messages">
     <div class="img-upload__message  img-upload__message--loading">Загружаем...</div>
   </template>
-<sciprt src="js/main.js"></sciprt>
+  <script src="js/main.js"></script>
 </body>
 </html>

@@ -9,6 +9,7 @@ var PHOTO_COUNT = 25;
 // var AVATAR_COUNT = 6;
 // var AVATAR_SIZE = 35;
 var ESC_KEYCODE = 27;
+var ENTER_KEYCODE = 13;
 
 
 var pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
@@ -26,17 +27,17 @@ var getRandomNumber = function (min, max) {
   return Math.floor((Math.random() * (max - min + 1)) + min);
 };
 
-var showElement = function (elem) {
-  if (elem) {
-    elem.classList.remove('hidden');
-  }
-};
+// var showElement = function (elem) {
+//   if (elem) {
+//     elem.classList.remove('hidden');
+//   }
+// };
 
-var hideElement = function (elem) {
-  if (elem) {
-    elem.classList.add('visually-hidden');
-  }
-};
+// var hideElement = function (elem) {
+//   if (elem) {
+//     elem.classList.add('visually-hidden');
+//   }
+// };
 
 var getRandomComments = function () {
   var randomComments = getRandomNumber(1, 2);
@@ -186,7 +187,7 @@ function closeEditForm() {
 }
 
 function formEscPressHandler(evt) {
-  if (evt.keyCode === KEY_CODE.ESC) {
+  if (evt.keyCode === ESC_KEYCODE) {
     closeEditForm();
   }
 }

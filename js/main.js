@@ -9,8 +9,6 @@ var PHOTO_COUNT = 25;
 // var AVATAR_COUNT = 6;
 // var AVATAR_SIZE = 35;
 var ESC_KEYCODE = 27;
-var ENTER_KEYCODE = 13;
-
 
 var pictureTemplate = document.querySelector('#picture').content.querySelector('.picture');
 var pictureElement = document.querySelector('.pictures');

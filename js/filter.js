@@ -3,7 +3,7 @@
 (function () {
   var pictures = document.querySelector('.pictures');
   var filtersForm = document.querySelector('.img-filters__form');
-  var filtersbuttonAll = Array.from(document.querySelectorAll('.img-filters__button'));
+  var filtersButtonAll = Array.from(document.querySelectorAll('.img-filters__button'));
 
   /**
     * Функция удаления загруженных картинок
@@ -50,7 +50,7 @@
     * @param {Event} evt - параметр события
     */
   var onClickFilter = function (evt) {
-    filtersbuttonAll.forEach(function (button) {
+    filtersButtonAll.forEach(function (button) {
       button.classList.remove('img-filters__button--active');
     });
     evt.target.classList.add('img-filters__button--active');

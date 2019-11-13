@@ -1,7 +1,6 @@
 'use strict';
 
 (function () {
-  var ESC_KEYCODE = 27;
   var imgEditingForm = document.querySelector('.img-upload__overlay');
   var buttunCloseForm = document.querySelector('#upload-cancel');
   var uploadFile = document.querySelector('#upload-file');
@@ -21,7 +20,7 @@
     * @param {Event} evt - параметр события
     */
   var onPopupEscPress = function (evt) {
-    if (evt.keyCode === ESC_KEYCODE) {
+    if (evt.keyCode === window.util.ESC_KEYCODE) {
       closePopup();
     }
   };

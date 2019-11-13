@@ -1,7 +1,6 @@
 'use strict';
 
 (function () {
-  var ESC_KEYCODE = 27;
   var form = document.querySelector('.img-upload__form');
   var successTemplate = document.querySelector('#success');
   var imgPreview = document.querySelector('.img-upload__preview img');
@@ -77,7 +76,7 @@
     }
 
     var onEscPress = function (evt) {
-      if (evt.keyCode === ESC_KEYCODE) {
+      if (evt.keyCode === window.util.ESC_KEYCODE) {
         onCloseUploadFile();
         main.removeChild(currentBlock);
       }

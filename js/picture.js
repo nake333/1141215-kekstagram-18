@@ -1,7 +1,6 @@
 'use strict';
 
 (function () {
-  var ESC_KEYCODE = 27;
   var bodyPage = document.querySelector('body');
   var pictureBlock = document.querySelector('.pictures');
   var bigPicture = document.querySelector('.big-picture');
@@ -92,7 +91,7 @@
     * @param {Event} evt - параметр события
     */
   var onPopupEscPress = function (evt) {
-    if (evt.keyCode === ESC_KEYCODE) {
+    if (evt.keyCode === window.util.ESC_KEYCODE) {
       onClickClose();
     }
   };
